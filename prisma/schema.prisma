@@ -10,16 +10,25 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Products {
-    id        String   @id @default(cuid())
-    userId    String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-    name      String
-    price     String
-    quantity  Int
-    image     String
-    category  String
-    description String
+model Listing {
+    id          String    @id @default(cuid())
+    userId      String
+    createdAt   DateTime  @default(now())
+    updatedAt   DateTime  @updatedAt
+    name        String
+    price       Float
+    quantity    Int?
+    image       String?
+    category    String?
+    description String?
+    message     Message[]
+}
 
+model Message {
+    id           String  @id @default(cuid())
+    fromUser     String
+    fromUserName String
+    listingId    String
+    message      String
+    listing      Listing @relation(fields: [listingId], references: [id])
 }
