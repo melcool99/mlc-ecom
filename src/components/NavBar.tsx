@@ -15,54 +15,34 @@ const NavBar = () => {
       <ul className="flex w-full flex-row  items-center   p-4 font-medium">
         {isSignedIn ? (
           <>
-            <li>
-              <Link
-                href="/"
-                className="block rounded bg-black py-2 pl-3 pr-4 text-white hover:text-orange-500"
-                aria-current="page"
-              >
+            <li className="block rounded bg-black py-2 pl-3 pr-4 text-white hover:text-orange-500">
+              <Link href="/" aria-current="page">
                 Home
               </Link>
             </li>
-            <li>
-              <Link
-                href="/sell-an-item"
-                className="block rounded bg-black py-2 pl-3 pr-4 text-white hover:text-orange-500"
-                aria-current="page"
-              >
+            <li className="block rounded bg-black py-2 pl-3 pr-4 text-white hover:text-orange-500">
+              <Link href="/sell-an-item" aria-current="page">
                 Sell Item
               </Link>
             </li>
-            <li>
-              <Link
-                href="/offers"
-                className="block rounded bg-black py-2 pl-3 pr-4 text-white hover:text-orange-500"
-                aria-current="page"
-              >
+            <li className="block rounded bg-black py-2 pl-3 pr-4 text-white hover:text-orange-500">
+              <Link href="/offers" aria-current="page">
                 Offers
               </Link>
             </li>
-            <li>
-              <SignOutButton>
-                <button className="block justify-self-end rounded bg-black py-2 pl-3 pr-4 text-white hover:text-orange-500">
-                  Sign out
-                </button>
-              </SignOutButton>
+            <li className="md:flex-grow-1 ml-auto justify-self-end">
+              <UserButton />
             </li>
           </>
         ) : (
           <li>
             <SignInButton mode="modal">
-              <button className="block rounded bg-black py-2 pl-3 pr-4 text-white hover:text-green-300 md:bg-transparent md:p-0 md:text-green-700 md:dark:text-green-500">
+              <button className="block rounded bg-black py-2 pl-3 pr-4 text-white hover:text-orange-500">
                 Sign in
               </button>
             </SignInButton>
           </li>
         )}
-
-        <li className="md:flex-grow-1 justify-self-end">
-          <UserButton />
-        </li>
       </ul>
     </nav>
   );

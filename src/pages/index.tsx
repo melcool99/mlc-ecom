@@ -7,7 +7,7 @@ import ProductCard from "~/components/ProductCard";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
-  const { user, isSignedIn } = useUser();
+  const { isSignedIn } = useUser();
   const listing = api.listings.list.useQuery();
 
   return (
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
             </div>
           </>
         ) : (
-          <h1 className="text-center text-5xl text-gray-50">
+          <h1 className="my-5 text-center text-5xl text-gray-50">
             Welcome, please sign in!
           </h1>
         )}
