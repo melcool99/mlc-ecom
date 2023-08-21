@@ -30,7 +30,7 @@ const Home: NextPage = () => {
             </div>
           </>
         ) : (
-          <h1 className="my-5 text-center text-5xl text-gray-50">
+          <h1 className="my-5 text-center text-5xl text-orange-500 ">
             Welcome, please sign in!
           </h1>
         )}
